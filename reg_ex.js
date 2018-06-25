@@ -52,3 +52,20 @@ console.log(/abc{2,}/.test("abc")); // false
 // {2,5} matches a string that has ab followed by 2 up to 5 c
 let arr = /abc{2,5}/.exec("abccccccccc");
 console.log(arr[0]); // abccccc
+
+// a(bc)* matches a string that has a followed by zero or more copies of bc
+let arr2 = /a(bc)*/.exec("abcbc")
+console.log(arr2[0]); //abcbc
+
+// a(bc){2,5}  matches a string that has a followed by 2 up to 5 copies of the sequence bc
+let arr3 = /a(bc){2,4}/.exec("abcbcbcbcbcbcbcbcbc")
+console.log(arr3[0]); //abcbcbcbc
+
+//OR OPERATOR
+//a(b|c) matches a string that has a followed by b or c
+let arr4 = /a(b|c)/.exec("abasdgasdfgs")
+console.log(arr4[0]); //ab
+
+//same as above
+let arr5 = /a[bc]/.exec("abasdgasdfgs")
+console.log(arr5[0]); //ab
