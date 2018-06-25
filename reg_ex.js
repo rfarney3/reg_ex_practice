@@ -88,3 +88,4 @@ let arr9 = /./.exec("heyaaaa")
 console.log(arr9[0]); // h
 
 console.log("yoyoyoyoyo")
+
