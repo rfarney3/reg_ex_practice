@@ -69,3 +69,20 @@ console.log(arr4[0]); //ab
 //same as above
 let arr5 = /a[bc]/.exec("abasdgasdfgs")
 console.log(arr5[0]); //ab
+
+//CHARACTER CLASSES
+// \d matches a single character that is a digit
+let arr6 = /\d/.exec("abasdgasdfgs123")
+console.log(arr6[0]); // 1
+
+// \w matches a word character (alphanumeric character plus underscore)
+let arr7 = /\w/.exec("abasdgasdfgs")
+console.log(arr7[0]); //a
+
+// \s matches whitespace character (includes tabs and line breaks)
+let arr8 = /\s/.exec("aba   sdgasdfgs  ")
+console.log(arr8[0]); // (nothing) it just finds a linebreak/tab
+
+// . matches any character
+let arr9 = /./.exec("heyaaaa")
+console.log(arr9[0]); // h
