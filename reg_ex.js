@@ -86,3 +86,5 @@ console.log(arr8[0]); // (nothing) it just finds a linebreak/tab
 // . matches any character
 let arr9 = /./.exec("heyaaaa")
 console.log(arr9[0]); // h
+
+console.log("yoyoyoyoyo")
