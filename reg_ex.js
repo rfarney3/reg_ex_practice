@@ -26,9 +26,29 @@ console.log(/^The end$/.test("The things end")); // false
 console.log(/the/.test("blah the end")); // true
 
 //Quantifiers
-// * matches a string that has abc followed by 0 or more characters
+// * matches a string that has ab followed by 0 or more c
 console.log(/abc*/.test("abcdefg")); // true
 
-// * matches a string that has abc followed by 1 or more characters
-console.log("yo", /abc+/.test("abcd")); // true
-console.log("yo", /abc+/.test("ab")); // false
+// + matches a string that has ab followed by 1 or more c
+console.log(/abc+/.test("abcd")); // true
+console.log(/abc+/.test("ab")); // false
+
+// ? matches a string that has ab followed by 0 or 1 c
+console.log(/abc?/.test("ga")); // false
+console.log(/abc?/.test("a")); // false
+console.log(/abc?/.test("bac")); // false
+console.log(/abc?/.test("ab")); // true
+
+// {2} matches a string that has ab followed by 2 c
+console.log(/abc{2}/.test("abcc")); // true
+console.log(/abc{2}/.test("abcccccc")); // true
+console.log(/abc{2}/.test("abc")); // false
+
+// {2,} matches a string that has ab followed by 2 or more c
+console.log(/abc{2,}/.test("abccccc")); // true
+console.log(/abc{2,}/.test("abcc")); // true
+console.log(/abc{2,}/.test("abc")); // false
+
+// {2,5} matches a string that has ab followed by 2 up to 5 c
+let arr = /abc{2,5}/.exec("abccccccccc");
+console.log(arr[0]); // abccccc
